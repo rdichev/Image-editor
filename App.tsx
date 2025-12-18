@@ -61,7 +61,7 @@ const App: React.FC = () => {
     if (!image.edited) return;
     const link = document.createElement('a');
     link.href = image.edited;
-    link.download = 'polished-product.png';
+    link.download = 'edited-image.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -83,10 +83,10 @@ const App: React.FC = () => {
           </svg>
         </div>
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-          Product<span className="text-indigo-600">Polish</span> AI
+          Image<span className="text-indigo-600">Editor</span> AI
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Turn raw snapshots into studio-quality catalog shots. Just tell us what to fix, remove, or enhance.
+          Transform your photos with high-end AI editing. Just tell us what to fix, remove, or enhance.
         </p>
       </header>
 
@@ -145,7 +145,7 @@ const App: React.FC = () => {
                 isLoading={status === EditStatus.PROCESSING}
                 disabled={!image.original || !prompt}
               >
-                Refine Image
+                Apply Edit
               </Button>
             </div>
             
@@ -214,7 +214,7 @@ const App: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="text-gray-900 font-semibold mb-2">No photo selected</h3>
-                  <p className="text-gray-500 text-sm">Upload a product photo to begin the AI cleanup process.</p>
+                  <p className="text-gray-500 text-sm">Upload a photo to begin the AI editing process.</p>
                 </div>
               )}
 
@@ -241,7 +241,7 @@ const App: React.FC = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="text-indigo-600 font-medium animate-pulse">Gemini is polishing your photo...</p>
+                  <p className="text-indigo-600 font-medium animate-pulse">Gemini is editing your photo...</p>
                   <p className="text-gray-400 text-sm mt-1">Applying instructions: "{prompt}"</p>
                 </div>
               )}
@@ -276,7 +276,7 @@ const App: React.FC = () => {
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                     </svg>
-                    Ready for 24+ global marketplaces
+                    High-quality output for all platforms
                   </div>
                   <div className="flex items-center gap-4 text-xs text-gray-400">
                     <span className="flex items-center gap-1">
@@ -294,12 +294,12 @@ const App: React.FC = () => {
 
       <footer className="mt-20 py-8 border-t border-gray-100 w-full max-w-6xl flex flex-col items-center gap-4">
         <div className="flex gap-8 text-sm text-gray-500 font-medium">
-          <a href="#" className="hover:text-indigo-600 transition-colors">Pricing</a>
-          <a href="#" className="hover:text-indigo-600 transition-colors">API Docs</a>
+          <a href="#" className="hover:text-indigo-600 transition-colors">Support</a>
+          <a href="#" className="hover:text-indigo-600 transition-colors">API</a>
           <a href="#" className="hover:text-indigo-600 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-indigo-600 transition-colors">Contact</a>
+          <a href="#" className="hover:text-indigo-600 transition-colors">Terms</a>
         </div>
-        <p className="text-xs text-gray-400">© 2025 ProductPolish AI. Powered by Gemini 2.5 Flash Image.</p>
+        <p className="text-xs text-gray-400">© 2025 Image Editor AI. Powered by Gemini 2.5 Flash Image.</p>
       </footer>
     </div>
   );
